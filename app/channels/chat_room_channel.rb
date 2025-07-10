@@ -19,8 +19,6 @@ class ChatRoomChannel < ApplicationCable::Channel
       username: data['username']
     )
     
-    # broadcast はモデルのafter_create_commitで行うので、ここでは削除
-    
     Rails.logger.info "Created message: #{message.inspect}"
   rescue ActiveRecord::RecordNotFound => e
     Rails.logger.error "Chat room not found: #{e.message}"
