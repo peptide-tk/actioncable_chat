@@ -7,7 +7,7 @@ WebSocket を利用してサーバーサイドとクライアントサイドで�
 
 ### action cable の構造
 
-![image1](demo/actioncable1.png)
+![image1](./actioncable1.png)
 
 - Channel: 特定の機能やルームを表す論理的なグループ
 - Subscription: サブスクライバとチャネルの間のコネクション
@@ -85,4 +85,4 @@ pin "channels", to: "channels/index.js"
 |chat_room_channel.js | チャネル操作 | メッセージ送受信、DOM 操作 |
 | index.js | チャネル読み込み | 各チャネルファイルの import |
 
-![image2](demo/actioncable2.png)
+![image2](./actioncable2.png)
