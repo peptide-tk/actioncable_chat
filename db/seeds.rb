@@ -1,0 +1,1 @@
+ChatRoom.find_or_create_by(name: "一般")

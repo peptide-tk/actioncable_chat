@@ -1,0 +1,22 @@
+<div data-controller="chat" data-chat-room-id-value="<%= @chat_room.id %>">
+  <h2><%= @chat_room.name %></h2>
+  <%= link_to "← 戻る", root_path %>
+  
+  <div id="messages" class="messages" data-chat-target="messages">
+    <% @messages.each do |message| %>
+      <div class="message">
+        <div class="message-header">
+          <%= message.username %>
+          <span class="message-time"><%= message.created_at.strftime("%H:%M") %></span>
+        </div>
+        <div><%= message.content %></div>
+      </div>
+    <% end %>
+  </div>
+  
+  <input type="text" placeholder="名前" class="form-control" data-chat-target="username">
+  <div class="message-form">
+    <input type="text" placeholder="メッセージ" class="form-control message-input" data-chat-target="message">
+    <button class="btn" data-action="click->chat#send">送信</button>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<h2>チャットルーム</h2>
+
+<% @chat_rooms.each do |room| %>
+  <%= link_to room.name, chat_room_path(room), class: "room-item" %>
+<% end %>
+
+<hr>
+
+<%= form_with model: @chat_room, local: true do |form| %>
+  <%= form.text_field :name, placeholder: "ルーム名", class: "form-control" %>
+  <%= form.submit "作成", class: "btn" %>
+<% end %>
